@@ -24,6 +24,14 @@ class CacheManager:
     
     def generate_key(self, *args, **kwargs) -> str:
         return self._generate_key(*args, **kwargs)
+    
+    def clear(self) -> None:
+        """Clear all cached data"""
+        self.cache.clear()
+    
+    def size(self) -> int:
+        """Get current cache size"""
+        return len(self.cache)
 
 
 # Global cache instance
