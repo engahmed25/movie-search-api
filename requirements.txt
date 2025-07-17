@@ -11,6 +11,7 @@ httpx==0.25.2
 # Caching
 redis==5.0.1
 aioredis==2.0.1
+cachetools==5.3.2
 
 # Environment management
 python-dotenv==1.0.0
