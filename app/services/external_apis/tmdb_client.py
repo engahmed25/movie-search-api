@@ -216,34 +216,34 @@ class TMDBClient(BaseMovieAPIClient):
             print(f"Warning: Failed to get detailed TV info for ID {tv_id}: {e}")
             return None
     
-    async def get_movie_details(self, movie_id: str) -> Movie:
-        """Get detailed information about a specific movie by TMDB ID"""
+    # async def get_movie_details(self, movie_id: str) -> Movie:
+    #     """Get detailed information about a specific movie by TMDB ID"""
         
-        if not self.api_key:
-            raise ExternalAPIError("TMDB API key is not configured")
+    #     if not self.api_key:
+    #         raise ExternalAPIError("TMDB API key is not configured")
         
-        try:
-            # Try to parse as integer (TMDB ID)
-            tmdb_id = int(movie_id)
+    #     try:
+    #         # Try to parse as integer (TMDB ID)
+    #         tmdb_id = int(movie_id)
             
-            # Try movie first
-            movie = await self._get_detailed_movie_info(tmdb_id)
-            if movie:
-                return movie
+    #         # Try movie first
+    #         movie = await self._get_detailed_movie_info(tmdb_id)
+    #         if movie:
+    #             return movie
             
-            # Try TV show if movie not found
-            movie = await self._get_detailed_tv_info(tmdb_id)
-            if movie:
-                return movie
+    #         # Try TV show if movie not found
+    #         movie = await self._get_detailed_tv_info(tmdb_id)
+    #         if movie:
+    #             return movie
             
-            raise NotFoundError(f"Movie/TV show not found with TMDB ID: {movie_id}")
+    #         raise NotFoundError(f"Movie/TV show not found with TMDB ID: {movie_id}")
             
-        except ValueError:
-            raise NotFoundError(f"Invalid TMDB ID format: {movie_id}")
-        except (ExternalAPIError, NotFoundError):
-            raise
-        except Exception as e:
-            raise ExternalAPIError(f"Failed to get movie details: {str(e)}")
+    #     except ValueError:
+    #         raise NotFoundError(f"Invalid TMDB ID format: {movie_id}")
+    #     except (ExternalAPIError, NotFoundError):
+    #         raise
+    #     except Exception as e:
+    #         raise ExternalAPIError(f"Failed to get movie details: {str(e)}")
     
     def _transform_search_result(self, data: Dict[str, Any], content_type: MovieType) -> Optional[Movie]:
         """Transform TMDB search result to Movie model"""

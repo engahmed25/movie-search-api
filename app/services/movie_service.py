@@ -55,7 +55,7 @@ class MovieService:
         )
     
     async def get_movie_details(self, movie_id: str) -> Movie:
-        """Get detailed information about a specific movie"""
+        """Get detailed information about a specific movie for imdb (testing)"""
         if not movie_id:
             raise ValidationError("Movie ID is required")
         
@@ -157,7 +157,7 @@ class MovieService:
         if params.year:
             try:
                 year_int = int(params.year)
-                if year_int < 1900 or year_int > 2030:
-                    raise ValidationError("Year must be between 1900 and 2030")
+                if year_int < 1900 or year_int > 2025:
+                    raise ValidationError("Year must be between 1900 and 2025")
             except ValueError:
                 raise ValidationError("Year must be a valid integer")

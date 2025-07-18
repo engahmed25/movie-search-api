@@ -11,10 +11,10 @@ class BaseMovieAPIClient(ABC):
         """Search for movies based on the provided parameters"""
         pass
     
-    @abstractmethod
-    async def get_movie_details(self, movie_id: str) -> Movie:
-        """Get detailed information about a specific movie"""
-        pass
+    # @abstractmethod
+    # async def get_movie_details(self, movie_id: str) -> Movie:
+    #     """Get detailed information about a specific movie"""
+    #     pass
     
     @abstractmethod
     def _transform_response(self, data: Dict[str, Any]) -> Movie:

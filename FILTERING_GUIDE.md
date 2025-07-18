@@ -54,7 +54,7 @@ The API now fetches detailed movie information from multiple sources:
 - **Type**: String (4-digit year)
 - **Description**: Filter movies by release year
 - **Example**: `/api/v1/movies/search?title=batman&year=2008`
-- **Validation**: Must be between 1900 and 2030
+- **Validation**: Must be between 1900 and 2025
 
 ### Pagination
 - **Parameters**: `page` (default: 1), `limit` (default: 10, max: 100)
