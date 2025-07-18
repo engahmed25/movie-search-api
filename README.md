@@ -33,7 +33,7 @@ A high-performance RESTful API built with FastAPI that enables users to search f
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/engahmed25/movie-search-api.git
 cd movie-search-api
 ```
 
@@ -50,10 +50,11 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-### 3. Install Dependencies
+### 3. Install Dependencies 
 
 ```bash
 pip install -r requirements.txt
+
 ```
 
 ### 4. Get API Keys
@@ -71,14 +72,19 @@ pip install -r requirements.txt
 ### 5. Environment Configuration
 
 Create a `.env` file in the root directory:
+```bash
 
+cp .env.example .env
+```
+ or 
+ 
 ```env
 # OMDB API Configuration
-OMDB_API_KEY=your_omdb_api_key_here
+OMDB_API_KEY=219ee558
 OMDB_BASE_URL=https://www.omdbapi.com/
 
 # TMDB API Configuration
-TMDB_API_KEY=your_tmdb_api_key_here
+TMDB_API_KEY=e8a3c693f398995f045c1e220d9e148c
 TMDB_BASE_URL=https://api.themoviedb.org/3
 
 # Optional Configuration
@@ -176,7 +182,7 @@ curl "http://localhost:8000/api/v1/movies/search?title=batman&page=2&limit=10"
 }
 ```
 
-#### Movie Details
+#### Movie Details test for OMDB
 ```http
 GET /api/v1/movies/{movie_id}
 ```
@@ -310,11 +316,7 @@ graph LR
 - **Parameter Requirements**: At least one search parameter required
 - **Type Safety**: Enum validation for movie types
 
-### Logging & Monitoring
-- **Structured Logging**: JSON-formatted logs
-- **Error Tracking**: Detailed error information
-- **Performance Metrics**: Response time tracking
-- **API Usage Monitoring**: Request/response logging
+
 
 ## 🧪 Testing
 
@@ -328,8 +330,6 @@ export TMDB_API_KEY=your_tmdb_key
 # Run example usage
 python example_usage.py
 
-# Run filtering tests
-python test_filtering.py  # Note: This file was deleted, needs recreation
 ```
 
 ### Test Scenarios Covered
@@ -341,13 +341,7 @@ python test_filtering.py  # Note: This file was deleted, needs recreation
 5. **Cache Performance**
 6. **Multi-source Integration**
 
-### Future Testing
 
-The architecture supports comprehensive testing:
-- **Unit Tests**: Service layer testing with mocked dependencies
-- **Integration Tests**: Full API endpoint testing
-- **Performance Tests**: Load testing with concurrent requests
-- **API Contract Tests**: External API response validation
 
 ## 🔄 Usage Examples
 
@@ -434,71 +428,6 @@ curl "http://localhost:8000/api/v1/movies/search?title=batman&page=2&limit=10"
 - **Memory Usage**: Cache size limited to 100 entries
 - **Concurrent Requests**: Limited by external API rate limits
 
-## 🚀 Future Improvements
-
-### High Priority
-1. **Comprehensive Test Suite**: pytest-based testing
-2. **API Rate Limiting**: Implement request throttling
-3. **Database Integration**: Cache frequently accessed data
-4. **Health Checks**: Monitor external API availability
-
-### Medium Priority
-1. **Advanced Search**: Fuzzy matching and full-text search
-2. **Recommendation Engine**: Related movie suggestions
-3. **Image Processing**: Thumbnail generation and optimization
-4. **Monitoring**: Prometheus metrics and alerting
-
-### Low Priority
-1. **GraphQL Support**: Alternative query interface
-2. **WebSocket**: Real-time search updates
-3. **Machine Learning**: Personalized recommendations
-4. **Multi-language**: International movie data
-
-## 📊 Performance Metrics
-
-### Typical Response Times (Local)
-- **Cache Hit**: ~10ms
-- **Single API Call**: ~200ms
-- **Dual API Call**: ~400ms
-- **Complex Filtering**: ~500ms
-
-### Cache Performance
-- **Hit Rate**: ~80% for repeated searches
-- **Memory Usage**: ~10MB for 100 cached entries
-- **TTL**: 5 minutes (configurable)
-
-## 🤝 Contributing
-
-### Development Setup
-
-```bash
-# Install development dependencies
-pip install -r requirements.txt
-
-# Run with auto-reload
-uvicorn app.main:app --reload
-
-# Format code
-black app/
-flake8 app/
-
-# Type checking
-mypy app/
-```
-
-### Code Standards
-- **PEP 8**: Python style guide compliance
-- **Type Hints**: Full type annotation coverage
-- **Docstrings**: Comprehensive documentation
-- **Error Handling**: Proper exception handling
-
-### Pull Request Process
-1. Fork the repository
-2. Create feature branch
-3. Add tests for new functionality
-4. Ensure all tests pass
-5. Update documentation
-6. Submit pull request
 
 ## 📄 License
 
@@ -511,13 +440,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - **FastAPI**: Modern, fast web framework
 - **Pydantic**: Data validation and settings
 
-## 📞 Support
 
-For issues and questions:
-1. Check the [Issues](https://github.com/your-username/movie-search-api/issues) page
-2. Review the [API Documentation](http://localhost:8000/docs)
-3. Check the [Filtering Guide](FILTERING_GUIDE.md)
-
----
 
 **Built with ❤️ using FastAPI and Python**
