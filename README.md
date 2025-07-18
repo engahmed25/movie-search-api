@@ -71,12 +71,14 @@ pip install -r requirements.txt
 
 ### 5. Environment Configuration
 
-Create a `.env` file in the root directory:
+
 ```bash
 
 cp .env.example .env
 ```
- or 
+
+ or
+ Create a `.env` file in the root directory:
  
 ```env
 # OMDB API Configuration
