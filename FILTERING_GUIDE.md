@@ -1,5 +1,5 @@
 # Movie Search API - Filtering Guide
-##Summary
+## Summary
 
 OMDB: Uses title, year, and type as direct query parameters
 TMDB: Uses title and year as direct query parameters
