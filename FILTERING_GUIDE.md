@@ -1,4 +1,11 @@
 # Movie Search API - Filtering Guide
+##Summary
+
+OMDB: Uses title, year, and type as direct query parameters
+TMDB: Uses title and year as direct query parameters
+Additional Filters: Both APIs collect initial data, then apply additional filters for actor and genre on the retrieved results using case-insensitive partial matching
+Movie Service: Also applies an additional layer of filtering in the _apply_additional_filters method to ensure consistency across merged results from both APIs
+The filtering is done post-retrieval because these external APIs don't support direct filtering by actors or genres in their search endpoints, so the system fetches broader results and then narrows them down based on the specified criteria.
 
 ## Overview
 
