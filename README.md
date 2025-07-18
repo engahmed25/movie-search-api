@@ -329,6 +329,8 @@ graph LR
 export OMDB_API_KEY=your_omdb_key
 export TMDB_API_KEY=your_tmdb_key
 
+cd tests
+
 # Run example usage
 python example_usage.py
 
